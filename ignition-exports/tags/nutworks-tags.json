@@ -1,0 +1,238 @@
+{
+  "name": "NutWorks",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "name": "Bagging",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "defaultValue": 0,
+          "name": "Bags_Per_Min",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "defaultValue": 0,
+          "name": "Boxes_Completed",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Bagger_Running",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Line_Running",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        }
+      ]
+    },
+    {
+      "name": "Recieving",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "Float4",
+          "defaultValue": 5000,
+          "expression": "5000 - (secondsBetween(dateMidnight(now()), now()) * 0.5)",
+          "formatString": "#,##0.##",
+          "name": "Silo1_Weight_kg",
+          "tagType": "AtomicTag",
+          "value": 5000.0,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 4200,
+          "name": "Silo2_Weight_kg",
+          "tagType": "AtomicTag",
+          "value": 4200,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Receiving_Active",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 3800,
+          "name": "Silo3_Weight_kg",
+          "tagType": "AtomicTag",
+          "value": 3800,
+          "valueSource": "memory"
+        }
+      ]
+    },
+    {
+      "name": "Coating",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Coater_Running",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 75,
+          "name": "Tank1_Level_pct",
+          "tagType": "AtomicTag",
+          "value": 75,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 60,
+          "name": "Tank2_Level_pct",
+          "tagType": "AtomicTag",
+          "value": 60,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Coater_Output_kg_hr",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "defaultValue": 35,
+          "name": "Coater_Speed_RPM",
+          "tagType": "AtomicTag",
+          "value": 35,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Flavour_Flow_kg_min",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "String",
+          "defaultValue": "WO-000",
+          "name": "WorkOrder_ID",
+          "tagType": "AtomicTag",
+          "value": "WO-000",
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Shift_OEE_pct",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Produced_Qty_kg",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Target_Qty_kg",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        }
+      ]
+    },
+    {
+      "name": "Packaging",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "defaultValue": 0,
+          "name": "Packaging_Speed",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Packaging_Running",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        },
+        {
+          "defaultValue": 0,
+          "name": "Boxes_Dispatched",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        }
+      ]
+    },
+    {
+      "name": "Roasting",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "Boolean",
+          "defaultValue": false,
+          "name": "Roaster_Running",
+          "tagType": "AtomicTag",
+          "value": false,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 180,
+          "name": "Roaster_Temp_C",
+          "tagType": "AtomicTag",
+          "value": 180,
+          "valueSource": "memory"
+        },
+        {
+          "defaultValue": 45,
+          "name": "Roaster_Speed_RPM",
+          "tagType": "AtomicTag",
+          "value": 45,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "defaultValue": 0,
+          "name": "Roaster_Output_kg_hr",
+          "tagType": "AtomicTag",
+          "value": 0,
+          "valueSource": "memory"
+        }
+      ]
+    }
+  ]
+}
