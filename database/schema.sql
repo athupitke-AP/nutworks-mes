@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS work_orders (id INTEGER PRIMARY KEY AUTOINCREMENT, work_order_id TEXT UNIQUE, product_name TEXT, nut_mix_type TEXT, target_qty_kg REAL, produced_qty_kg REAL DEFAULT 0, status TEXT DEFAULT 'Scheduled', created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS material_lots (id INTEGER PRIMARY KEY AUTOINCREMENT, lot_number TEXT, material_type TEXT, received_qty_kg REAL, silo_location TEXT, received_at DATETIME DEFAULT CURRENT_TIMESTAMP, status TEXT DEFAULT 'In Stock');
+CREATE TABLE IF NOT EXISTS oee_log (id INTEGER PRIMARY KEY AUTOINCREMENT, shift_date DATE, shift TEXT, availability_pct REAL, performance_pct REAL, quality_pct REAL, oee_pct REAL);
+CREATE TABLE IF NOT EXISTS production_log (id INTEGER PRIMARY KEY AUTOINCREMENT, work_order_id TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, station TEXT, event_type TEXT, value REAL, unit TEXT, notes TEXT);
